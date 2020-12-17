@@ -1,0 +1,77 @@
+/* Картинка мастабируется по отношению к родительскому элементу */
+.reviews .listRegBiz {
+    position: relative;
+}
+
+/* Кнопки вперед и назад */
+.list_services .nextRegBiz {
+    cursor: pointer;
+    width: 40px;
+    transition: 0.6s ease;
+}
+
+/* При наведении на кнопки добавляем фон кнопок */
+/*.list_services .nextRegBiz:hover {*/
+/*    background-color: rgba(0, 0, 0, 0.7);*/
+/*}*/
+
+.list_services .nextRegBiz:hover path {
+    fill: white;
+}
+
+/* Кружочки */
+.slider-dotsRegBiz {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: table;
+}
+.slider-dots_itemRegBiz{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin: 0 2px;
+    /*background-color: #ddd78c;*/
+    color: rgba(0, 0, 0, 0.3);
+    /*display: inline-block;*/
+    transition: background-color 0.6s ease;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Commissioner', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+}
+.active,
+.slider-dots_itemRegBiz:hover {
+    background-color: rgba(222, 195, 119, 0.5);
+}
+
+/* Анимация слайдов */
+.list_services .listRegBiz {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

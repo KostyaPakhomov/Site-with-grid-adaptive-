@@ -1,0 +1,165 @@
+/* Картинка мастабируется по отношению к родительскому элементу */
+.reviews .rev {
+    object-fit: cover;
+    width: 100%;
+    height: 585px;
+    /*border: blue 2px solid;*/
+    z-index: 4;
+    position: relative;
+    background: url("../img/reviews.jpg") no-repeat no-repeat;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Кнопки вперед и назад */
+.reviews .prev, .reviews .next {
+    cursor: pointer;
+    position: absolute;
+    grid-column: 2/4;
+    bottom: 0;
+    width: auto;
+    transition: 0.6s ease;
+}
+
+.reviews .next {
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    z-index: 3;
+}
+
+.reviews .prev {
+    border-radius: 10px 0 0 10px;
+    right: 60px;
+    z-index: 3;
+}
+
+/* При наведении на кнопки добавляем фон кнопок */
+.reviews .prev:hover,
+.reviews .next:hover {
+    background-color: rgba(222, 195, 119, 0.5);
+}
+
+.reviews .prev:hover path {
+    fill: white;
+}
+
+.reviews .next:hover path {
+    fill: white;
+}
+
+
+/* Заголовок слайда */
+.who {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /*border: red 2px solid;*/
+    z-index: 2;
+    width: 470px;
+    height: 65px;
+    font-family: 'Commissioner', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 0.01em;
+    color: #DEC377;
+}
+
+.who p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.about {
+    position: absolute;
+    top: 225px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /*border: red 2px solid;*/
+    z-index: 2;
+    width: 470px;
+    height: 295px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.about_in {
+    position: relative;
+    width: 470px;
+    height: 295px;
+}
+
+.about_in a {
+    display: block;
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -100%);
+}
+
+.btn_for_slide {
+    position: absolute;
+    grid-column: 2/5;
+    top: 25%;
+    z-index: 2;
+    margin-top: 195px;
+}
+
+/* Кружочки */
+.slider-dotsRev {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.slider-dots_itemRev{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd78c;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.slider-dots_itemRev:hover {
+    background-color: #DEC377;
+}
+
+/* Анимация слайдов */
+.reviews .rev {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

@@ -1,0 +1,120 @@
+.slider{
+    position: relative;
+    height: 650px;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto, 70px)) 1fr;
+    grid-column-gap: 30px;
+}
+
+.item {
+    grid-column: span 14;
+}
+
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 100%;
+    height: 650px;
+    border: none !important;
+    box-shadow: none !important;
+    z-index: 1;
+}
+/* Кнопки вперед и назад */
+.slides .slider .prev, .slides .slider .next {
+    cursor: pointer;
+    position: absolute;
+    grid-column: 2/4;
+    bottom: 100px;
+    width: auto;
+    transition: 0.6s ease;
+}
+.slider .next {
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    z-index: 3;
+}
+.slider .prev {
+    border-radius: 10px 0 0 10px;
+    z-index: 3;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(222, 195, 119, 0.5);
+}
+
+.slider .prev:hover path {
+    fill: white;
+}
+
+.slider .next:hover path {
+    fill: white;
+}
+
+/* Заголовок слайда */
+.slideText_main {
+    position: absolute;
+    grid-column: 2/7;
+    top: 25%;
+    /*border: red 2px solid;*/
+    z-index: 2;
+    width: 500px;
+    height: 100px;
+    font-family: 'Commissioner', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.slideText {
+    position: absolute;
+    grid-column: 2/7;
+    top: 25%;
+    margin-top: 120px;
+    /*border: red 2px solid;*/
+    z-index: 2;
+    width: 470px;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.btn_for_slide {
+    position: absolute;
+    grid-column: 2/5;
+    top: 25%;
+    z-index: 2;
+    margin-top: 195px;
+}
+
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
